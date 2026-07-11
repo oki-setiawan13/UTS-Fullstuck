@@ -1,5 +1,19 @@
-Data Siswa TK Tunas Nusantara
+# 🏫 Sistem Informasi Data Siswa TK Tunas Nusantara
 <br>
+Aplikasi manajemen internal yang dirancang khusus untuk mempermudah para guru dan kepala sekolah di **TK Tunas Nusantara** dalam mendata siswa, mengelola kelas, mencatat absensi harian, serta mendistribusikan pengumuman penting secara terpusat dan efisien.
+<br>
+-----------------------------------------
+<br>
+
+## 👥 Informasi Mahasiswa
+<br>
+| Informasi | Detail |
+| :--- | :--- |
+| **Nama** | Shabilla Berliana Haryono |
+| **NIM** | 2305101149 |
+| **Kelas** | TIF - 6A |
+| **Mata Kuliah** | Pemrograman Web Fullstack |
+
 
 <img width="1918" height="877" alt="1 LOGIN" src="https://github.com/user-attachments/assets/e3e4a05e-21ef-45e9-ae3f-b6264ec5b5d4" />
 1. Fitur Login <br>
@@ -192,3 +206,17 @@ Komponen Fitur<br>
 •	Batal : Tombol untuk membatalkan proses input.<br> 
 Output<br>
 Data siswa baru berhasil tersimpan dan ditampilkan pada halaman Data Siswa.<br>
+
+## ⚖️ Analisis Aplikasi
+
+### 👍 Kelebihan
+1.  **Aksesibilitas Tinggi:** Mempermudah guru dalam mengakses, meninjau, dan memperbarui profil siswa secara berkala.
+2.  **Monitoring Terpusat:** Kepala Sekolah dapat memantau grafik kehadiran harian siswa serta ketersediaan kuota per kelas dengan cepat.
+3.  **Diseminasi Informasi Efektif:** Pengumuman internal sekolah dapat disampaikan secara transparan dan terpusat dalam satu pintu aplikasi.
+
+### ⚠️ Kekurangan & Pengembangan Selanjutnya (*Future Improvement*)
+*   **Sistem Hak Akses (RBAC):** Saat ini belum ada pembatasan hak akses (*Role-Based Access Control*). Semua pengguna yang masuk masih memiliki akses penuh (tambah, edit, hapus). 
+*   *Rencana Selanjutnya:* Menerapkan sistem multi-role yang memisahkan batasan menu antara **Kepala Sekolah** (Full Akses/Monitoring), **Guru/Wali Kelas** (Input Absen/Data Siswa), dan **Orang Tua** (Read-Only/Melihat Pengumuman & Absen anak).
+
+---
+*Proyek ini dikembangkan guna memenuhi tugas praktikum dan teori matakuliah Pemrograman Web Fullstack.*
