@@ -262,4 +262,17 @@ Aplikasi manajemen internal yang dirancang khusus untuk mempermudah para guru da
 * ***Rencana Selanjutnya:*** Menerapkan sistem multi-role yang memisahkan batasan menu antara **Kepala Sekolah** (Full Akses/Monitoring), **Guru/Wali Kelas** (Input Absen/Data Siswa), dan **Orang Tua** (Read-Only/Melihat Pengumuman & Absen anak).
 
 ---
+
+## 🛠️ Teknologi yang Digunakan
+
+| Komponen | Spesifikasi Teknologi |
+| :--- | :--- |
+| **Backend** | PHP + Laravel 12 |
+| **Frontend** | Blade + Livewire + Flux + Tailwind |
+| **API** | REST API Laravel dengan Sanctum Auth |
+| **Database** | SQLite default |
+| **Build tool** | Vite |
+| **Testing** | Pest |
+
+---
 *Proyek ini dikembangkan guna memenuhi tugas praktikum dan teori matakuliah Pemrograman Web Fullstack.*
