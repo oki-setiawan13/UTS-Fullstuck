@@ -276,3 +276,40 @@ Aplikasi manajemen internal yang dirancang khusus untuk mempermudah para guru da
 
 ---
 *Proyek ini dikembangkan guna memenuhi tugas praktikum dan teori matakuliah Pemrograman Web Fullstack.*
+
+---
+
+## 📝 Review Singkat Update Project
+
+**Identitas Reviewer:**
+* **Nama:** Oki Setiawan
+* **NIM:** 2305101019
+
+### 1. Ringkasan Proyek & Teknologi
+* **Nama Aplikasi**: Sistem Informasi Data Siswa TK Tunas Nusantara
+* **Pengembang**: Shabilla Berliana Haryono (NIM: 2305101149) - TIF 6A
+* **Teknologi Utama**:
+  * **Backend**: PHP 8.2 + Laravel 12
+  * **Frontend**: Blade + Livewire (Volt) + Flux UI + Tailwind CSS v4
+  * **API**: REST API dengan Laravel Sanctum
+  * **Database**: SQLite
+  * **Testing**: Pest
+
+### 2. Kelebihan & Kekuatan Kode (*Strengths*)
+* **Desain Database & Hubungan Model yang Baik**: Hubungan relasional antara model `Student`, `Classroom`, `Attendance`, dan `Announcement` sudah terdefinisi secara rapi.
+* **Validasi Absensi Harian**: Terdapat proteksi dalam `AttendanceController` untuk mencegah absensi ganda bagi siswa yang sama di tanggal yang sama.
+* **Fitur Autentikasi Modern**: Menggunakan Livewire Volt dan Flux UI untuk menangani setup login, registrasi, dan pengaturan profil.
+* **Pengujian Programmatic**: Sudah memiliki pondasi pengujian fitur (*feature testing*) yang kuat menggunakan Pest (misalnya, tes untuk Classroom dan Auth).
+
+### 3. Catatan Perbaikan & Temuan Bug (*Bugs & Cleanup*)
+* **Redundansi Middleware di `routes/web.php`**: Terdapat deklarasi middleware `auth` yang bertumpuk (nested) secara redundan di baris 19 dan baris 26.
+* **Masalah pada API `StudentController.php`**:
+  * Method `edit()` mengembalikan view Blade (`return view('students.edit')`), yang mana tidak umum untuk REST API.
+  * Method `update()` mengembalikan `redirect()->route(...)` bukan respon JSON.
+  * Aturan validasi NIS di `update()` menulis `'nis' => 'required|unique:students'`, yang akan menyebabkan error jika guru mengupdate data siswa tanpa mengubah NIS-nya. Seharusnya menggunakan `'nis' => 'required|unique:students,nis,' . $student->id`.
+* **API `ClassroomController.php` Belum Diimplementasikan**: Endpoint API untuk Classroom telah terdaftar di `routes/api.php`, namun method di dalam controllernya masih berupa fungsi kosong (*empty stubs*).
+
+### 4. Rekomendasi Langkah Selanjutnya (*Roadmap Update*)
+1. **Penerapan Multi-Role (RBAC)**: Pisahkan hak akses antara **Kepala Sekolah** (Full Access & Monitor), **Guru** (Input Absen & Siswa), dan **Orang Tua** (Read-Only).
+2. **Merapikan REST API**: Perbaiki method API Student dan selesaikan implementasi API Classroom agar aplikasi ini siap jika nanti diintegrasikan dengan aplikasi mobile.
+3. **Penyempurnaan Tampilan**: Pastikan Flux UI berjalan dengan baik di sisi frontend dengan memvalidasi build script (`npm run build`).
